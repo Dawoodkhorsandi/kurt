@@ -22,4 +22,4 @@ class Shorten(models.Model):
             return f'http://localhost:8000/{encode(self.id)}/'
         else:
             domain = Site.objects.get_current()
-            return f'http://{domain}/{encode(self.id)}/'
+            return f'https://{domain}/{encode(self.id)}/'
