@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'l1-p1b1$4@(lt@@$!2#sw_1z_fr$0_z#o%a3j$opo8t!3o$h2o'
+SECRET_KEY = '##### TO BE CHANGED ######'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     'rest_framework',
+    'drf_yasg',
 
     'shortener.apps.ShortenerConfig',
 ]
@@ -127,3 +128,5 @@ STATIC_URL = '/static/'
 
 
 SITE_ID = 1
+
+REST_FRAMEWORK = {'DEFAULT_SCHEMA_CLASS':'rest_framework.schemas.coreapi.AutoSchema' }
