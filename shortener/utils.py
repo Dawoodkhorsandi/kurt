@@ -1,4 +1,4 @@
-BASE62_MAPPING = '23456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ'
+BASE57_MAPPING = '23456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ'
 # some character removed for better readability (0,O,1,I,l)
 
 
@@ -31,24 +31,24 @@ def encode(decimal_number, base=57):
 
     mapped_string = []
     while remainder_stack:
-        mapped_string.append(BASE62_MAPPING[remainder_stack.pop()])
+        mapped_string.append(BASE57_MAPPING[remainder_stack.pop()])
 
     return ''.join(mapped_string)
 
 
 def decode(value, base=57):
     """
-
-    :param value:
-    :param base:
-    :return:
+    By default gets a base 57 encoded string and convert it to base 10
+    :param value: base encoded 57 string
+    :param base: base number
+    :return: a decimal number
     """
     if base <= 0 or base > 57:
         raise BaseNotValidException(base)
 
     decimal_number = 0
     for index, char in enumerate(reversed(value)):
-        number = BASE62_MAPPING.index(char)
+        number = BASE57_MAPPING.index(char)
         decimal_number += number * (base ** index)
 
     return decimal_number
