@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('long_url', models.CharField(max_length=2500)),
-                ('times_viewed', models.BigIntegerField(default=0)),
+                ('view_count', models.BigIntegerField(default=0)),
             ],
         ),
     ]

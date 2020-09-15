@@ -26,6 +26,6 @@ def redirect_to_url(request, short_url):
     :return: A redirect to target url
     """
     instance = get_object_or_404(Shorten, id=decode(short_url))
-    instance.increase_view()
+    instance.increase_view_count()
 
     return redirect(instance.long_url)

@@ -7,13 +7,13 @@ from shortener.utils import encode
 
 class Shorten(models.Model):
     long_url = models.URLField(max_length=2500)
-    times_viewed = models.BigIntegerField(default=0)
+    view_count = models.BigIntegerField(default=0)
 
     def __str__(self):
         return self.long_url
 
-    def increase_view(self):
-        self.times_viewed = self.times_viewed + 1
+    def increase_view_count(self):
+        self.view_count = self.view_count + 1
         self.save()
 
     @property

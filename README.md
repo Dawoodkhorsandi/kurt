@@ -18,7 +18,7 @@ Yet another Django URL shortener API
     "detail_url": "http://domain/api/v1/1/",
     "long_url": "https:google.com/some-extra-parameters",
     "short_url": "http://domain/3/",
-    "times_viewed": 1
+    "view_count": 1
   },
   ....
   {
@@ -26,7 +26,7 @@ Yet another Django URL shortener API
     "detail_url": "http://domain/api/v1/4/",
     "long_url": "https://mail.google.com/mail/ca/u/0/#inbox",
     "short_url": "http://domain/6/",
-    "times_viewed": 0
+    "view_count": 0
   }
 
 ```
@@ -56,7 +56,7 @@ GET /v1/{id}/
     "detail_url": "http://domain/api/v1/4/",
     "long_url": "https://mail.google.com/mail/ca/u/0/#inbox",
     "short_url": "http://domain/6/",
-    "times_viewed": 0
+    "view_count": 0
   }
 ```
 

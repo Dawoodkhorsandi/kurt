@@ -11,8 +11,8 @@ class ShortenModelSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Shorten
-        fields = ('id', 'detail_url', 'long_url', 'short_url', 'times_viewed')
-        read_only_fields = ['times_viewed', ]
+        fields = ('id', 'detail_url', 'long_url', 'short_url', 'view_count')
+        read_only_fields = ['view_count', ]
 
     def get_detail_url(self, obj):
         domain = Site.objects.get_current()
